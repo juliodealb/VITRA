@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VITRA | Polarizados Arquitectónicos Premium | México</title>
+  <meta name="description" content="Películas arquitectónicas premium para control solar, privacidad y seguridad. Soluciones residenciales y comerciales en Guadalajara.">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          },
+          colors: {
+            'vitra-charcoal': '#1a1a1a',
+            'vitra-gray': '#4a4a4a',
+            'vitra-sand': '#f5f5f0',
+            'vitra-cream': '#fafaf9',
+            'vitra-accent': '#2C5F2D',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .stagger-1 { transition-delay: 0.1s; }
+    .stagger-2 { transition-delay: 0.2s; }
+    .stagger-3 { transition-delay: 0.3s; }
+    .stagger-4 { transition-delay: 0.4s; }
+    
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    
+    .hero-overlay {
+      background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 100%);
+    }
+    
+    .text-balance {
+      text-wrap: balance;
+    }
+    
+    .product-card {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .tab-active {
+      border-bottom: 2px solid #1a1a1a;
+      color: #1a1a1a;
+    }
+    
+    .image-hover {
+      overflow: hidden;
+    }
+    
+    .image-hover img {
+      transition: transform 0.6s ease;
+    }
+    
+    .image-hover:hover img {
+      transform: scale(1.05);
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up {
+        transition: none;
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body class="bg-vitra-cream text-vitra-charcoal antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed w-full z-50 glass-nav border-b border-gray-100 transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-vitra-charcoal rounded-sm flex items-center justify-center">
+            <span class="text-white font-serif text-lg font-semibold">V</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-serif text-xl tracking-wide font-semibold">VITRA</span>
+            <span class="text-[10px] uppercase tracking-[0.2em] text-vitra-gray">Polarizados</span>
+          </div>
+        </div>
+        
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#soluciones" class="text-sm font-medium hover:text-vitra-gray transition-colors">Soluciones</a>
+          <a href="#productos" class="text-sm font-medium hover:text-vitra-gray transition-colors">Productos</a>
+          <a href="#proyectos" class="text-sm font-medium hover:text-vitra-gray transition-colors">Proyectos</a>
+          <a href="#contacto" class="text-sm font-medium hover:text-vitra-gray transition-colors">Contacto</a>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <a href="https://wa.me/523327854075?text=Hola,%20quiero%20cotizar%20polarizado%20arquitectónico%20para%20mi%20espacio." 
+             target="_blank"
+             class="hidden sm:flex items-center gap-2 bg-vitra-charcoal text-white px-5 py-2.5 text-sm font-medium hover:bg-gray-800 transition-all rounded-sm">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            Cotizar
+          </a>
+          <button class="md:hidden" id="mobileMenuBtn">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="hidden md:hidden bg-white border-t absolute w-full" id="mobileMenu">
+      <div class="px-6 py-4 space-y-3">
+        <a href="#soluciones" class="block text-sm font-medium py-2">Soluciones</a>
+        <a href="#productos" class="block text-sm font-medium py-2">Productos</a>
+        <a href="#proyectos" class="block text-sm font-medium py-2">Proyectos</a>
+        <a href="#contacto" class="block text-sm font-medium py-2">Contacto</a>
+        <a href="https://wa.me/523327854075?text=Hola,%20quiero%20cotizar%20polarizado%20arquitectónico%20para%20mi%20espacio." 
+           class="flex items-center justify-center gap-2 bg-vitra-charcoal text-white px-5 py-3 text-sm font-medium mt-4">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          Cotizar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+    <!-- Video Background -->
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 bg-gray-900">
+        <img src="http://static.photos/architecture/1920x1080/42" 
+             alt="Arquitectura moderna con ventanales" 
+             class="w-full h-full object-cover opacity-90">
+      </div>
+      <div class="hero-overlay absolute inset-0"></div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center text-white pt-20">
+      <p class="text-sm md:text-base uppercase tracking-[0.3em] mb-6 fade-up font-medium">Películas Arquitectónicas Premium</p>
+      <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl leading-tight mb-6 fade-up stagger-1 text-balance">
+        Control solar, privacidad y seguridad para espacios que se sienten mejor.
+      </h1>
+      <p class="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-10 fade-up stagger-2 font-light leading-relaxed text-balance">
+        Películas arquitectónicas premium para residencias, oficinas, fachadas y espacios comerciales. Menos calor, más confort, mayor privacidad y protección sin sacrificar diseño.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center fade-up stagger-3">
+        <a href="https://wa.me/523327854075?text=Hola,%20quiero%20cotizar%20polarizado%20arquitectónico%20para%20mi%20espacio." 
+           class="inline-flex items-center justify-center gap-2 bg-white text-vitra-charcoal px-8 py-4 text-sm font-semibold hover:bg-gray-100 transition-all rounded-sm">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          Cotizar por WhatsApp
+        </a>
+        <a href="#soluciones" class="inline-flex items-center justify-center gap-2 border border-white text-white px-8 py-4 text-sm font-semibold hover:bg-white/10 transition-all rounded-sm">
+          Ver soluciones
+          <i data-lucide="arrow-down" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Highlights Bar -->
+    <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur border-t border-white/20">
+      <div class="max-w-7xl mx-auto px-6 py-6">
+        <div class="grid md:grid-cols-3 gap-6 text-center">
+          <div class="flex items-center justify-center gap-3 fade-up stagger-1">
+            <i data-lucide="sun" class="w-5 h-5 text-vitra-charcoal"></i>
+            <span class="text-sm font-medium text-vitra-gray">Hasta 97% rechazo IR en líneas nano/cerámicas</span>
+          </div>
+          <div class="flex items-center justify-center gap-3 fade-up stagger-2">
+            <i data-lucide="eye" class="w-5 h-5 text-vitra-charcoal"></i>
+            <span class="text-sm font-medium text-vitra-gray">Opciones transparentes, reflectivas y privacidad</span>
+          </div>
+          <div class="flex items-center justify-center gap-3 fade-up stagger-3">
+            <i data-lucide="home" class="w-5 h-5 text-vitra-charcoal"></i>
+            <span class="text-sm font-medium text-vitra-gray">Soluciones residenciales y comerciales a medida</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Value Proposition -->
+  <section class="py-24 md:py-32 bg-white" id="soluciones">
+    <div class="max-w-4xl mx-auto px-6 text-center mb-16">
+      <h2 class="font-serif text-3xl md:text-5xl mb-6 fade-up text-balance">Más que polarizado: confort, estética y desempeño</h2>
+      <p class="text-vitra-gray text-lg leading-relaxed fade-up stagger-1 text-balance">
+        En VITRA diseñamos soluciones en películas arquitectónicas para transformar cómo se siente y funciona un espacio. Nuestras películas ayudan a reducir calor, mejorar privacidad, proteger interiores y elevar la experiencia visual del entorno.
+      </p>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="p-6 border border-gray-100 rounded-sm hover:shadow-lg transition-all fade-up stagger-1 group">
+        <div class="w-12 h-12 bg-vitra-sand rounded-full flex items-center justify-center mb-4 group-hover:bg-vitra-charcoal transition-colors">
+          <i data-lucide="thermometer-sun" class="w-6 h-6 text-vitra-charcoal group-hover:text-white transition-colors"></i>
+        </div>
+        <h3 class="font-semibold mb-2">Menos calor interior</h3>
+        <p class="text-sm text-vitra-gray leading-relaxed">Reducción significativa de la carga térmica solar sin oscurecer excesivamente.</p>
+      </div>
+
+      <div class="p-6 border border-gray-100 rounded-sm hover:shadow-lg transition-all fade-up stagger-2 group">
+        <div class="w-12 h-12 bg-vitra-sand rounded-full flex items-center justify-center mb-4 group-hover:bg-vitra-charcoal transition-colors">
+          <i data-lucide="sun-dim" class="w-6 h-6 text-vitra-charcoal group-hover:text-white transition-colors"></i>
+        </div>
+        <h3 class="font-semibold mb-2">Menor deslumbramiento</h3>
+        <p class="text-sm text-vitra-gray leading-relaxed">Control de reflejos y destellos para mayor confort visual en espacios de trabajo.</p>
+      </div>
+
+      <div class="p-6 border border-gray-100 rounded-sm hover:shadow-lg transition-all fade-up stagger-3 group">
+        <div class="w-12 h-12 bg-vitra-sand rounded-full flex items-center justify-center mb-4 group-hover:bg-vitra-charcoal transition-colors">
+          <i data-lucide="shield-check" class="w-6 h-6 text-vitra-charcoal group-hover:text-white transition-colors"></i>
+        </div>
+        <h3 class="font-semibold mb-2">Protección UV</h3>
+        <p class="text-sm text-vitra-gray leading-relaxed">Bloqueo de rayos ultravioleta para proteger muebles, pisos y arte de la decoloración.</p>
+      </div>
+
+      <div class="p-6 border border-gray-100 rounded-sm hover:shadow-lg transition-all fade-up stagger-4 group">
+        <div class="w-12 h-12 bg-vitra-sand rounded-full flex items-center justify-center mb-4 group-hover:bg-vitra-charcoal transition-colors">
+          <i data-lucide="lock" class="w-6 h-6 text-vitra-charcoal group-hover:text-white transition-colors"></i>
+        </div>
+        <h3 class="font-semibold mb-2">Privacidad y seguridad</h3>
+        <p class="text-sm text-vitra-gray leading-relaxed">Opciones inteligentes que controlan visibilidad y refuerzan el vidrio ante impactos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Residential vs Commercial -->
+  <section class="py-24 bg-vitra-sand">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-px bg-gray-200">
+        
+        <!-- Residential -->
+        <div class="bg-white p-8 md:p-16 fade-up">
+          <div class="image-hover mb-8 rounded-sm overflow-hidden aspect-[4/3]">
+            <img src="http://static.photos/interior/800x600/24" alt="Interior residencial" class="w-full h-full object-cover">
+          </div>
+          <span class="text-xs uppercase tracking-[0.2em] text-vitra-gray mb-2 block">Residencial</span>
+          <h3 class="font-serif text-3xl md:text-4xl mb-4">Polarizados residenciales</h3>
+          <p class="text-vitra-gray mb-8 leading-relaxed">
+            Mayor confort térmico, privacidad y protección para casas, departamentos, rooftops, recámaras, baños, salas y ventanales expuestos al sol.
+          </p>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3 text-sm">
+              <i data-lucide="check" class="w-4 h-4 mt-0.5 text-vitra-accent"></i>
+              <span>Control térmico sin oscurecer vistas</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm">
+              <i data-lucide="check" class="w-4 h-4 mt-0.5 text-vitra-accent"></i>
+              <span>Privacidad inteligente PDLC</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm">
+              <i data-lucide="check" class="w-4 h-4 mt-0.5 text-vitra-accent"></i>
+              <span>Protección UV para interiores</span>
+            </li>
+          </ul>
+          <a href="https://wa.me/523327854075?text=Hola,%20me%20interesa%20polarizado%20residencial.%20Quiero%20más%20información%20y%20cotización." 
+             class="inline-flex items-center gap-2 text-sm font-semibold border-b-2 border-vitra-charcoal pb-1 hover:gap-4 transition-all">
+            Ver soluciones residenciales
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <!-- Commercial -->
+        <div class="bg-white p-8 md:p-16 fade-up stagger-1">
+          <div class="image-hover mb-8 rounded-sm overflow-hidden aspect-[4/3]">
+            <img src="http://static.photos/office/800x600/15" alt="Oficina comercial" class="w-full h-full object-cover">
+          </div>
+          <span class="text-xs uppercase tracking-[0.2em] text-vitra-gray mb-2 block">Comercial</span>
+          <h3 class="font-serif text-3xl md:text-4xl mb-4">Polarizados comerciales</h3>
+          <p class="text-vitra-gray mb-8 leading-relaxed">
+            Ideal para oficinas, corporativos, consultorios, showrooms, hoteles, restaurantes y fachadas comerciales que buscan reducir calor, mejorar imagen y elevar confort.
+          </p>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3 text-sm">
+              <i data-lucide="check" class="w-4 h-4 mt-0.5 text-vitra-accent"></i>
+              <span>Fachadas con alto rechazo térmico</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm">
+              <i data-lucide="check" class="w-4 h-4 mt-0.5 text-vitra-accent"></i>
+              <span>Privacidad para salas de juntas</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm">
+              <i data-lucide="check" class="w-4 h-4 mt-0.5 text-vitra-accent"></i>
+              <span>Seguridad ante impactos</span>
+            </li>
+          </ul>
+          <a href="https://wa.me/523327854075?text=Hola,%20me%20interesa%20polarizado%20comercial.%20Quiero%20más%20información%20y%20cotización." 
+             class="inline-flex items-center gap-2 text-sm font-semibold border-b-2 border-vitra-charcoal pb-1 hover:gap-4 transition-all">
+            Ver soluciones comerciales
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions by Need -->
+  <section class="py-24 md:py-32 bg-white" id="productos">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16 fade-up">
+        <h2 class="font-serif text-3xl md:text-5xl mb-4">Soluciones por necesidad</h2>
+        <p class="text-vitra-gray max-w-2xl mx-auto">Cada espacio requiere una solución específica. Selecciona según tu prioridad:</p>
+      </div>
+
+      <!-- Tabs -->
+      <div class="flex justify-center gap-8 mb-12 border-b border-gray-200 fade-up">
+        <button class="tab-btn pb-4 text-sm font-medium text-vitra-gray hover:text-vitra-charcoal transition-colors tab-active" data-tab="solar">
+          Control Solar
+        </button>
+        <button class="tab-btn pb-4 text-sm font-medium text-vitra-gray hover:text-vitra-charcoal transition-colors" data-tab="privacy">
+          Privacidad
+        </button>
+        <button class="tab-btn pb-4 text-sm font-medium text-vitra-gray hover:text-vitra-charcoal transition-colors" data-tab="security">
+          Seguridad
+        </button>
+      </div>
+
+      <!-- Solar Content -->
+      <div class="tab-content block" id="solar">
+        <div class="mb-12 text-center max-w-3xl mx-auto">
+          <p class="text-vitra-gray leading-relaxed mb-8">
+            Diseñadas para reducir la carga térmica solar, mejorar confort y conservar luz natural. Son ideales para ventanales expuestos, orientaciones poniente y espacios donde el calor se siente intenso.
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="product-card bg-vitra-sand p-6 rounded-sm">
+            <div class="aspect-square bg-white mb-4 rounded-sm overflow-hidden relative">
+              <img src="http://static.photos/minimal/400x400/1" alt="Nano cerámico" class="w-full h-full object-cover opacity-80">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+              <span class="absolute bottom-4 left-4 text-white text-xs font-medium">Premium</span>
+            </div>
+            <h4 class="font-semibold mb-2">Nano Cerámico Transparente</h4>
+            <ul class="text-sm text-vitra-gray space-y-2 mb-4">
+              <li>• Mantiene apariencia clara y estética limpia</li>
+              <li>• Rechaza gran parte del calor infrarrojo</li>
+              <li>• Ideal para residencias premium y oficinas</li>
+              <li>• No da efecto espejo agresivo</li>
+            </ul>
+            <a href="https://wa.me/523327854075?text=Hola,%20me%20interesa%20el%20nano%20cerámico%20transparente.%20Quiero%20más%20información%20y%20cotización." class="text-xs font-semibold underline hover:no-underline">Cotizar este producto</a>
+          </div>
+
+          <div class="product-card bg-vitra-sand p-6 rounded-sm">
+            <div class="aspect-square bg-gray-800 mb-4 rounded-sm overflow-hidden relative">
+              <img src="http://static.photos/minimal/400x400/2" alt="Nano carbón" class="w-full h-full object-cover opacity-60">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+            </div>
+            <h4 class="font-semibold mb-2">Nano Carbón</h4>
+            <ul class="text-sm text-vitra-gray space-y-2 mb-4">
+              <li>• Apariencia más sobria y moderna</li>
+              <li>• Mejor control solar con tono marcado</li>
+              <li>• Ayuda a reducir deslumbramiento</li>
+              <li>• Ideal para fachadas y exposición fuerte</li>
+            </ul>
+            <a href="https://wa.me/523327854075?text=Hola,%20me%20interesa%20el%20nano%20carbón.%20Quiero%20más%20información%20y%20cotización." class="text-xs font-semibold underline hover:no-underline">Cotizar este producto</a>
+          </div>
+
+          <div class="product-card bg-vitra-sand p-6 rounded-sm">
+            <div class="aspect-square bg-gray-300 mb-4 rounded-sm overflow-hidden relative">
+              <img src="http://static.photos/minimal/400x400/3" alt="Plata reflecta" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+            </div>
+            <h4 class="font-semibold mb-2">Plata Reflecta</h4>
+            <ul class="text-sm text-vitra-gray space-y-2 mb-4">
+              <li>• Alto desempeño en rechazo de calor</li>
+              <li>• Apariencia exterior más reflejante</li>
+              <li>• Aporta privacidad diurna</li>
+              <li>• Útil en fachadas con alta carga solar</li>
+            </ul>
+            <a href="https://wa.me/523327854075?text=Hola,%20me%20interesa%20la%20película%20plata%20reflecta.%20Quiero%20más%20información%20y%20cotización." class="text-xs font-semibold underline hover:no-underline">Cotizar este producto</a>
+          </div>
+
+          <div class="product-card bg-vitra-sand p-6 rounded-sm">
+            <div class="aspect-square bg-blue-50 mb-4 rounded-sm overflow-hidden relative">
+              <img src="http://static.photos/minimal/400x400/4" alt="Cristal" class="w-full h-full object-cover opacity-40">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+              <span class="absolute bottom-4 left-4 text-white text-xs font-medium">Ultra clear</span>
+            </div>
+            <h4 class="font-semibold mb-2">Cristal (VLT 95)</h4>
+            <ul class="text-sm text-vitra-gray space-y-2 mb-4">
+              <li>• Casi imperceptible visualmente</li>
+              <li>• Conserva máxima entrada de luz</li>
+              <li>• Protección sin cambiar apariencia</li>
+              <li>• Ideal para conservar vistas intactas</li>
+            </ul>
+            <a href="https://wa.me/523327854075?text=Hola,%20me%20interesa%20la%20película%20cristal%20VLT%2095.%20Quiero%20más%20información%20y%20cotización." class="text-xs font-semibold underline hover:no-underline">Cotizar este producto</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Privacy Content -->
+      <div class="tab-content hidden" id="privacy">
+        <div class="mb-12 text-center max-w-3xl mx-auto">
+          <p class="text-vitra-gray leading-relaxed mb-8">
+            Soluciones para controlar visibilidad, crear privacidad y mejorar la experiencia del espacio sin perder diseño.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div class="product-card border border-gray-100 p-8 rounded-sm">
+            <div class="flex items-start justify-between mb-6">
+              <div>
+                <h4 class="font-serif text-2xl mb-1">PDLC</h4>
+                <span class="text-xs uppercase tracking-widest text-vitra-gray">Privacidad Inteligente</span>
+              </div>
+              <div class="w-12 h-12 bg-vitra-sand rounded-full flex items-center justify-center">
+                <i data-lucide="toggle-right" class="w-6 h-6"></i>
+              </div>
+            </div>
+            <p class="text-sm text-vitra-gray mb-4">Con solo accionar un interruptor, cambia de transparente a translúcido. Ideal para oficinas, salas de juntas, consultorios y baños.</p>
+            <div class="aspect-video bg-gray-100 rounded-sm mb-4 overflow-hidden">
+              <img src="http://static.photos/technology/600x400/5" alt="PDLC" class="w-full h-full object-cover">
+            </div>
+            <a href="https://wa.me/523327854075?text=Hola,%20me%20interesa%20la%20película%20PDLC%20inteligente.%20Quiero%20más%20información%20y%20cotización." class="inline-flex items-center gap-2 text-sm font-semibold">
+              Cotizar PDLC <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <div class="space-y-6">
+            <div class="product-card border border-gray-100 p-6 rounded-sm">
+              <h4 class="font-semibold mb-2">Esmerilado</h4>
+              <p class="text-sm text-vitra-gray mb-3">Privacidad elegante y permanente. Excelente para baños, canceles y divisiones. Deja pasar luz sin dar visibilidad directa.</p>
+              <a href="https://wa.me/523327854075?text=Hola,%20me%20interesa%20la%20película%20esmerilada.%20Quiero%20más%20información%20y%20cotización." class="text-xs font-semibold underline">Cotizar</a>
+            </div>
+
+            <div class="product-card border border-gray-100 p-6 rounded-sm">
+              <h4 class="font-semibold mb-2">Plata Reflecta</h4>
+              <p class="text-sm text-vitra-gray mb-3">Privacidad diurna con control solar. Efecto espejo exterior durante el día. Ideal para fachadas.</p>
+              <a href="https://wa.me/523327854075?text=Hola,%20me%20interesa%20la%20película%20plata%20reflecta.%20Quiero%20más%20información%20y%20cotización." class="text-xs font-semibold underline">Cotizar</a>
+            </div>
+
+            <div class="product-card border border-gray-100 p-6 rounded-sm">
+              <h4 class="font-semibold mb-2">Plata Humo</h4>
+              <p class="text-sm text-vitra-gray mb-3">Diseñada para reducir reflejo interior nocturno. Look oscuro y refinado.</p>
+              <a href="https://wa.me/523327854075?text=Hola,%20me%20interesa%20la%20película%20plata%20humo.%20Quiero%20más%20información%20y%20cotización." class="text-xs font-semibold underline">Cotizar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Security Content -->
+      <div class="tab-content hidden" id="security">
+        <div class="mb-12 text-center max-w-3xl mx-auto">
+          <p class="text-vitra-gray leading-relaxed mb-8">
+            Películas de seguridad diseñadas para reforzar el cristal y ayudar a retener fragmentos ante impactos o rompimientos.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="product-card bg-gray-50 p-8 rounded-sm border-b-4 border-gray-200">
+            <div class="text-4xl font-serif mb-4">4 <span class="text-lg">mil</span></div>
+            <h4 class="font-semibold mb-3">Seguridad 4 mil</h4>
+            <ul class="text-sm text-vitra-gray space-y-2">
+              <li>• Refuerzo inicial para cristal</li>
+              <li>• Ayuda a contener fragmentación</li>
+              <li>• Opción ligera para protección adicional</li>
+            </ul>
+          </div>
+
+          <div class="product-card bg-gray-50 p-8 rounded-sm border-b-4 border-vitra-charcoal">
+            <div class="text-4xl font-serif mb-4">6 <span class="text-lg">mil</span></div>
+            <h4 class="font-semibold mb-3">Seguridad 6 mil</h4>
+            <ul class="text-sm text-vitra-gray space-y-2">
+              <li>• Mejor balance claridad/resistencia</li>
+              <li>• Mayor retención de fragmentos</li>
+              <li>• Muy usada en residencial y comercial</li>
+            </ul>
+            <div class="mt-4 inline-block px-3 py-1 bg-vitra-charcoal text-white text-xs rounded-full">Recomendado</div>
+          </div>
+
+          <div class="product-card bg-gray-50 p-8 rounded-sm border-b-4 border-gray-400">
+            <div class="text-4xl font-serif mb-4">12 <span class="text-lg">mil</span></div>
+            <h4 class="font-semibold mb-3">Seguridad 12 mil</h4>
+            <ul class="text-sm text-vitra-gray space-y-2">
+              <li>• Mayor robustez de la línea</li>
+              <li>• Más contención ante impactos</li>
+              <li>• Para necesidades exigentes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Properties -->
+  <section class="py-24 bg-vitra-sand">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-16 fade-up">
+        <h2 class="font-serif text-3xl md:text-4xl mb-6">Cómo funcionan nuestras películas</h2>
+        <p class="text-vitra-gray">Explicado de forma clara para que tomes la mejor decisión.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 mb-16">
+        <div class="space-y-6">
+          <div class="bg-white p-6 rounded-sm fade-up stagger-1">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
+                <span class="text-orange-600 font-bold text-xs">UV</span>
+              </div>
+              <h4 class="font-semibold">Protección UV</h4>
+            </div>
+            <p class="text-sm text-vitra-gray">Ayuda a proteger interiores y reducir decoloración de muebles, pisos y arte.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-sm fade-up stagger-2">
+            <div class="flex items-start gap-3 mb-3">
+              <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center shrink-0">
+                <span class="text-red-600 font-bold text-xs">IR</span>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-1">Rechazo de Infrarrojo (IR)</h4>
+                <p class="text-sm text-vitra-gray">El calor infrarrojo es uno de los principales responsables de la sensación térmica intensa junto al vidrio.</p>
+              </div>
+            </div>
+            <div class="mt-4 pt-4 border-t border-gray-100">
+              <div class="flex justify-between text-xs mb-2">
+                <span>Nano cerámico premium</span>
+                <span class="font-semibold">hasta 97%</span>
+              </div>
+              <div class="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
+                <div class="bg-vitra-charcoal h-full" style="width: 97%"></div>
+              </div>
+              <p class="text-[10px] text-vitra-gray mt-2">*Valores según línea y configuración específica</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <div class="bg-white p-6 rounded-sm fade-up stagger-1">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                <span class="text-blue-600 font-bold text-xs">VLT</span>
+              </div>
+              <h4 class="font-semibold">Luz Visible (VLT)</h4>
+            </div>
+            <p class="text-sm text-vitra-gray">Porcentaje de luz visible que entra al espacio. Un VLT alto = más luz natural.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-sm fade-up stagger-2">
+            <div class="flex items-center gap-3 mb-3">
+              <i data-lucide="info" class="w-5 h-5 text-vitra-gray"></i>
+              <h4 class="font-semibold">Nota importante</h4>
+            </div>
+            <p class="text-sm text-vitra-gray leading-relaxed">
+              La reducción de temperatura interior puede variar según tipo de vidrio, orientación, incidencia solar directa, tamaño del ventanal y ventilación del espacio.
+            </p>
+            <p class="text-sm text-vitra-gray mt-3 leading-relaxed">
+              Inmuebles con sol directo fuerte, especialmente en orientación poniente, suelen percibir mejoras más notorias.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-vitra-charcoal text-white p-8 md:p-12 rounded-sm fade-up">
+        <div class="flex items-start gap-4">
+          <i data-lucide="lightbulb" class="w-6 h-6 mt-1 shrink-0"></i>
+          <div>
+            <h4 class="font-serif text-xl mb-3">Cuando el sol pega de frente</h4>
+            <p class="text-gray-300 text-sm leading-relaxed">
+              Especialmente en fachadas poniente o superficies muy expuestas, la sensación térmica suele incrementarse notablemente. En esos casos, elegir la película correcta puede hacer una diferencia importante en confort y carga térmica.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Authority Section -->
+  <section class="py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="font-serif text-3xl md:text-4xl mb-6 fade-up">Elegimos la película según tu espacio, no al revés</h2>
+      <p class="text-vitra-gray mb-12 fade-up stagger-1 leading-relaxed">
+        No todos los cristales ni todos los espacios requieren la misma solución. En VITRA analizamos uso del espacio, orientación solar, nivel de privacidad deseado y estética buscada para recomendar la película adecuada.
+      </p>
+      
+      <div class="grid md:grid-cols-3 gap-8 text-left fade-up stagger-2">
+        <div class="flex gap-4">
+          <i data-lucide="clipboard-check" class="w-5 h-5 text-vitra-charcoal shrink-0 mt-1"></i>
+          <div>
+            <h4 class="font-semibold text-sm mb-1">Evaluación personalizada</h4>
+            <p class="text-xs text-vitra-gray">Análisis según necesidad real del espacio</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <i data-lucide="settings" class="w-5 h-5 text-vitra-charcoal shrink-0 mt-1"></i>
+          <div>
+            <h4 class="font-semibold text-sm mb-1">Instalación profesional</h4>
+            <p class="text-xs text-vitra-gray">Acabados limpios y discretos garantizados</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <i data-lucide="message-square" class="w-5 h-5 text-vitra-charcoal shrink-0 mt-1"></i>
+          <div>
+            <h4 class="font-semibold text-sm mb-1">Asesoría directa</h4>
+            <p class="text-xs text-vitra-gray">WhatsApp para atención inmediata</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ideal for You -->
+  <section class="py-24 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="font-serif text-3xl md:text-4xl text-center mb-16 fade-up">¿Cuál es ideal para ti?</h2>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-sm border-t-4 border-blue-400 fade-up stagger-1">
+          <div class="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+            <i data-lucide="thermometer-snowflake" class="w-5 h-5 text-blue-600"></i>
+          </div>
+          <h3 class="font-serif text-xl mb-4">Quiero bajar calor sin oscurecer mucho</h3>
+          <div class="bg-blue-50 p-4 rounded-sm mb-4">
+            <p class="text-sm font-medium text-blue-900">Recomendamos:</p>
+            <p class="text-sm text-blue-800">Nano cerámico transparente o Cristal VLT 95</p>
+          </div>
+          <p class="text-xs text-vitra-gray mb-6">Máximo rechazo térmico con mínimo cambio visual.</p>
+          <a href="https://wa.me/523327854075?text=Hola,%20me%20interesa%20una%20solución%20de%20control%20solar%20para%20mi%20espacio.%20Quiero%20más%20información%20y%20cotización." 
+             class="block text-center py-3 border border-vitra-charcoal text-sm font-medium hover:bg-vitra-charcoal hover:text-white transition-colors rounded-sm">
+            Asesoría por WhatsApp
+          </a>
+        </div>
+
+        <div class="bg-white p-8 rounded-sm border-t-4 border-purple-400 fade-up stagger-2">
+          <div class="w-10 h-10 bg-purple-50 rounded-full flex items-center justify-center mb-6">
+            <i data-lucide="eye-off" class="w-5 h-5 text-purple-600"></i>
+          </div>
+          <h3 class="font-serif text-xl mb-4">Quiero privacidad y control solar</h3>
+          <div class="bg-purple-50 p-4 rounded-sm mb-4">
+            <p class="text-sm font-medium text-purple-900">Recomendamos:</p>
+            <p class="text-sm text-purple-800">Plata reflecta, Plata humo o PDLC</p>
+          </div>
+          <p class="text-xs text-vitra-gray mb-6">Privacidad inteligente con excelente desempeño térmico.</p>
+          <a href="https://wa.me/523327854075?text=Hola,%20me%20interesa%20una%20solución%20de%20privacidad%20para%20mi%20espacio.%20Quiero%20más%20información%20y%20cotización." 
+             class="block text-center py-3 border border-vitra-charcoal text-sm font-medium hover:bg-vitra-charcoal hover:text-white transition-colors rounded-sm">
+            Asesoría por WhatsApp
+          </a>
+        </div>
+
+        <div class="bg-white p-8 rounded-sm border-t-4 border-red-400 fade-up stagger-3">
+          <div class="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center mb-6">
+            <i data-lucide="shield" class="w-5 h-5 text-red-600"></i>
+          </div>
+          <h3 class="font-serif text-xl mb-4">Quiero reforzar el vidrio</h3>
+          <div class="bg-red-50 p-4 rounded-sm mb-4">
+            <p class="text-sm font-medium text-red-900">Recomendamos:</p>
+            <p class="text-sm text-red-800">Seguridad 4 mil, 6 mil o 12 mil</p>
+          </div>
+          <p class="text-xs text-vitra-gray mb-6">Protección ante impactos con distintos niveles de resistencia.</p>
+          <a href="https://wa.me/523327854075?text=Hola,%20me%20interesa%20una%20solución%20de%20seguridad%20para%20mi%20espacio.%20Quiero%20más%20información%20y%20cotización." 
+             class="block text-center py-3 border border-vitra-charcoal text-sm font-medium hover:bg-vitra-charcoal hover:text-white transition-colors rounded-sm">
+            Asesoría por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="py-24 bg-white" id="proyectos">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-12 fade-up">
+        <div>
+          <h2 class="font-serif text-3xl md:text-4xl mb-2">Proyectos realizados</h2>
+          <p class="text-vitra-gray">Espacios transformados con nuestras soluciones.</p>
+        </div>
+        <a href="https://wa.me/523327854075?text=Hola,%20quiero%20más%20información%20sobre%20sus%20películas%20arquitectónicas." class="text-sm font-medium border-b border-vitra-charcoal pb-1 mt-4 md:mt-0 hover:opacity-70 transition-opacity">
+          Ver más proyectos
+        </a>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="image-hover relative aspect-[3/4] fade-up stagger-1">
+          <img src="http://static.photos/interior/600x800/10" alt="Sala residencial" class="w-full h-full object-cover rounded-sm">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity rounded-sm"></div>
+          <div class="absolute bottom-0 left-0 p-6 text-white opacity-0 hover:opacity-100 transition-opacity">
+            <p class="text-xs uppercase tracking-widest mb-1">Residencial</p>
+            <p class="font-serif text-lg">Sala con control solar transparente</p>
+          </div>
+        </div>
+
+        <div class="image-hover relative aspect-[3/4] fade-up stagger-2">
+          <img src="http://static.photos/office/600x800/20" alt="Fachada comercial" class="w-full h-full object-cover rounded-sm">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity rounded-sm"></div>
+          <div class="absolute bottom-0 left-0 p-6 text-white opacity-0 hover:opacity-100 transition-opacity">
+            <p class="text-xs uppercase tracking-widest mb-1">Comercial</p>
+            <p class="font-serif text-lg">Fachada con plata reflecta</p>
+          </div>
+        </div>
+
+        <div class="image-hover relative aspect-[3/4] fade-up stagger-3">
+          <img src="http://static.photos/workspace/600x800/30" alt="Oficina PDLC" class="w-full h-full object-cover rounded-sm">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity rounded-sm"></div>
+          <div class="absolute bottom-0 left-0 p-6 text-white opacity-0 hover:opacity-100 transition-opacity">
+            <p class="text-xs uppercase tracking-widest mb-1">Privacidad</p>
+            <p class="font-serif text-lg">Oficina con privacidad PDLC</p>
+          </div>
+        </div>
+
+        <div class="image-hover relative aspect-[3/4] fade-up stagger-4">
+          <img src="http://static.photos/architecture/600x800/40" alt="Seguridad" class="w-full h-full object-cover rounded-sm">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity rounded-sm"></div>
+          <div class="absolute bottom-0 left-0 p-6 text-white opacity-0 hover:opacity-100 transition-opacity">
+            <p class="text-xs uppercase tracking-widest mb-1">Seguridad</p>
+            <p class="font-serif text-lg">Cristal reforzado 12 mil</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="py-24 bg-vitra-sand" id="contacto">
+    <div class="max-w-2xl mx-auto px-6">
+      <div class="bg-white p-8 md:p-12 rounded-sm shadow-sm fade-up">
+        <h2 class="font-serif text-3xl mb-2 text-center">Cuéntanos tu proyecto</h2>
+        <p class="text-vitra-gray text-center mb-8 text-sm">Registra tus datos y en breve un asesor se comunicará contigo.</p>
+        
+        <form id="contactForm" class="space-y-6">
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-xs font-medium mb-2 uppercase tracking-wider">Nombre</label>
+              <input type="text" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-sm focus:outline-none focus:border-vitra-charcoal transition-colors text-sm" placeholder="Tu nombre">
+            </div>
+            <div>
+              <label class="block text-xs font-medium mb-2 uppercase tracking-wider">Teléfono</label>
+              <input type="tel" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-sm focus:outline-none focus:border-vitra-charcoal transition-colors text-sm" placeholder="33 0000 0000">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium mb-2 uppercase tracking-wider">Ciudad</label>
+            <input type="text" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-sm focus:outline-none focus:border-vitra-charcoal transition-colors text-sm" placeholder="Guadalajara, Jalisco">
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-xs font-medium mb-2 uppercase tracking-wider">Tipo de proyecto</label>
+              <select class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-sm focus:outline-none focus:border-vitra-charcoal transition-colors text-sm">
+                <option>Residencial</option>
+                <option>Comercial</option>
+                <option>Industria</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-medium mb-2 uppercase tracking-wider">Necesidad principal</label>
+              <select class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-sm focus:outline-none focus:border-vitra-charcoal transition-colors text-sm">
+                <option>Control solar</option>
+                <option>Privacidad</option>
+                <option>Seguridad</option>
+                <option>Combinadas</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium mb-2 uppercase tracking-wider">Mensaje</label>
+            <textarea rows="4" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-sm focus:outline-none focus:border-vitra-charcoal transition-colors text-sm" placeholder="Describe tu espacio: ventanales grandes, orientación, ubicación..."></textarea>
+          </div>
+
+          <button type="submit" class="w-full bg-vitra-charcoal text-white py-4 font-medium hover:bg-gray-800 transition-colors rounded-sm flex items-center justify-center gap-2">
+            Solicitar asesoría
+            <i data-lucide="send" class="w-4 h-4"></i>
+          </button>
+        </form>
+
+        <div class="mt-8 pt-8 border-t border-gray-100 text-center">
+          <p class="text-sm text-vitra-gray mb-4">O si lo prefieres, escríbenos por WhatsApp y te ayudamos más rápido.</p>
+          <a href="https://wa.me/523327854075?text=Hola,%20quiero%20cotizar%20mi%20proyecto.%20Les%20comparto%20mis%20datos%20y%20requerimientos." 
+             class="inline-flex items-center gap-2 text-green-600 font-medium hover:underline">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            Hablar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-32 bg-vitra-charcoal text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+      <img src="http://static.photos/architecture/1920x1080/99" alt="Background" class="w-full h-full object-cover">
+    </div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <h2 class="font-serif text-3xl md:text-5xl mb-6 fade-up text-balance">Haz que tu espacio se vea mejor, se sienta mejor y funcione mejor.</h2>
+      <p class="text-gray-300 text-lg mb-10 fade-up stagger-1">Cotiza por WhatsApp y te ayudamos a elegir la película ideal para tu casa, oficina o proyecto comercial.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center fade-up stagger-2">
+        <a href="https://wa.me/523327854075?text=Hola,%20quiero%20cotizar%20polarizado%20arquitectónico%20para%20mi%20espacio." 
+           class="inline-flex items-center justify-center gap-2 bg-white text-vitra-charcoal px-8 py-4 text-sm font-semibold hover:bg-gray-100 transition-all rounded-sm">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          Cotizar ahora
+        </a>
+        <a href="#contacto" class="inline-flex items-center justify-center gap-2 border border-white text-white px-8 py-4 text-sm font-semibold hover:bg-white/10 transition-all rounded-sm">
+          Enviar proyecto
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-gray-100 py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-12 mb-12">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 bg-vitra-charcoal rounded-sm flex items-center justify-center">
+              <span class="text-white font-serif font-semibold">V</span>
+            </div>
+            <span class="font-serif text-xl tracking-wide font-semibold">VITRA</span>
+          </div>
+          <p class="text-vitra-gray text-sm leading-relaxed max-w-sm mb-6">
+            Películas arquitectónicas premium para control solar, privacidad y seguridad. Soluciones a medida para espacios residenciales y comerciales en México.
+          </p>
+          <div class="flex gap-4">
+            <a href="https://www.facebook.com/ALSAPolarizados" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-vitra-charcoal hover:text-white transition-colors">
+              <i data-lucide="facebook" class="w-4 h-4"></i>
+            </a>
+            <a href="https://www.instagram.com/polarizados_alsa" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-vitra-charcoal hover:text-white transition-colors">
+              <i data-lucide="instagram" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4 text-sm uppercase tracking-wider">Navegación</h4>
+          <ul class="space-y-3">
+            <li><a href="#soluciones" class="text-sm text-vitra-gray hover:text-vitra-charcoal transition-colors">Soluciones</a></li>
+            <li><a href="#productos" class="text-sm text-vitra-gray hover:text-vitra-charcoal transition-colors">Productos</a></li>
+            <li><a href="#proyectos" class="text-sm text-vitra-gray hover:text-vitra-charcoal transition-colors">Proyectos</a></li>
+            <li><a href="#contacto" class="text-sm text-vitra-gray hover:text-vitra-charcoal transition-colors">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4 text-sm uppercase tracking-wider">Contacto</h4>
+          <ul class="space-y-3 text-sm text-vitra-gray">
+            <li class="flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-4 h-4"></i>
+              Av. Aviación 114, San Juan de Ocotán, Zapopan, Jal.
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="phone" class="w-4 h-4"></i>
+              <a href="tel:+5213327854075" class="hover:text-vitra-charcoal">+52 1 33 2785 4075</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <a href="https://wa.me/523327854075?text=Hola,%20quiero%20más%20información%20sobre%20sus%20películas%20arquitectónicas." class="hover:text-vitra-charcoal">WhatsApp</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-xs text-vitra-gray">
+          © 2024 VITRA Polarizados. Todos los derechos reservados.
+        </p>
+        <div class="flex gap-6">
+          <a href="#" class="text-xs text-vitra-gray hover:text-vitra-charcoal">Política de privacidad</a>
+          <span class="text-xs text-vitra-gray hidden md:inline">|</span>
+          <span class="text-xs text-vitra-gray text-center md:text-left">
+            Los valores de desempeño pueden variar según condiciones del proyecto.
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/523327854075?text=Hola,%20quiero%20más%20información%20sobre%20sus%20películas%20arquitectónicas." 
+     class="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 group"
+     aria-label="Contactar por WhatsApp">
+    <i data-lucide="message-circle" class="w-6 h-6"></i>
+    <span class="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-white text-gray-800 px-3 py-1 rounded text-xs font-medium shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+      ¿Necesitas ayuda?
+    </span>
+  </a>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Tab switching for products
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tabId = btn.dataset.tab;
+        
+        // Remove active classes
+        tabBtns.forEach(b => {
+          b.classList.remove('tab-active');
+          b.classList.add('text-vitra-gray');
+        });
+        tabContents.forEach(c => c.classList.add('hidden'));
+        
+        // Add active classes
+        btn.classList.add('tab-active');
+        btn.classList.remove('text-vitra-gray');
+        document.getElementById(tabId).classList.remove('hidden');
+      });
+    });
+
+    // Intersection Observer for fade-up animations
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-up').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Navbar scroll behavior
+    let lastScroll = 0;
+    const navbar = document.getElementById('navbar');
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      
+      if (currentScroll > 100) {
+        navbar.classList.add('shadow-sm');
+      } else {
+        navbar.classList.remove('shadow-sm');
+      }
+      
+      lastScroll = currentScroll;
+    });
+
+    // Form handling
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      const originalContent = btn.innerHTML;
+      
+      btn.innerHTML = '<span class="flex items-center gap-2">Enviando...</span>';
+      btn.disabled = true;
+      
+      // Simulate form submission
+      setTimeout(() => {
+        btn.innerHTML = '<span class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4"></i> Enviado correctamente</span>';
+        btn.classList.remove('bg-vitra-charcoal');
+        btn.classList.add('bg-green-600');
+        
+        setTimeout(() => {
+          form.reset();
+          btn.innerHTML = originalContent;
+          btn.classList.remove('bg-green-600');
+          btn.classList.add('bg-vitra-charcoal');
+          btn.disabled = false;
+          lucide.createIcons();
+        }, 2000);
+      }, 1500);
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+<script src="https://deepsite.hf.co/deepsite-badge.js"></script>
+</body>
+</html>
