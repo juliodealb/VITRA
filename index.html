@@ -754,46 +754,83 @@
         </a>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="image-hover relative aspect-[3/4] fade-up stagger-1">
-          <img src="http://static.photos/interior/600x800/10" alt="Sala residencial" class="w-full h-full object-cover rounded-sm">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity rounded-sm"></div>
-          <div class="absolute bottom-0 left-0 p-6 text-white opacity-0 hover:opacity-100 transition-opacity">
-            <p class="text-xs uppercase tracking-widest mb-1">Residencial</p>
-            <p class="font-serif text-lg">Sala con control solar transparente</p>
-          </div>
-        </div>
+      <div class="relative">
+  <!-- Flechas -->
+  <button id="projectsPrev" class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 border border-gray-200 shadow-sm w-10 h-10 items-center justify-center rounded-full hover:bg-white">
+    <span>&larr;</span>
+  </button>
 
-        <div class="image-hover relative aspect-[3/4] fade-up stagger-2">
-          <img src="http://static.photos/office/600x800/20" alt="Fachada comercial" class="w-full h-full object-cover rounded-sm">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity rounded-sm"></div>
-          <div class="absolute bottom-0 left-0 p-6 text-white opacity-0 hover:opacity-100 transition-opacity">
-            <p class="text-xs uppercase tracking-widest mb-1">Comercial</p>
-            <p class="font-serif text-lg">Fachada con plata reflecta</p>
-          </div>
-        </div>
+  <button id="projectsNext" class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 border border-gray-200 shadow-sm w-10 h-10 items-center justify-center rounded-full hover:bg-white">
+    <span>&rarr;</span>
+  </button>
 
-        <div class="image-hover relative aspect-[3/4] fade-up stagger-3">
-          <img src="http://static.photos/workspace/600x800/30" alt="Oficina PDLC" class="w-full h-full object-cover rounded-sm">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity rounded-sm"></div>
-          <div class="absolute bottom-0 left-0 p-6 text-white opacity-0 hover:opacity-100 transition-opacity">
-            <p class="text-xs uppercase tracking-widest mb-1">Privacidad</p>
-            <p class="font-serif text-lg">Oficina con privacidad PDLC</p>
-          </div>
-        </div>
-
-        <div class="image-hover relative aspect-[3/4] fade-up stagger-4">
-          <img src="http://static.photos/architecture/600x800/40" alt="Seguridad" class="w-full h-full object-cover rounded-sm">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity rounded-sm"></div>
-          <div class="absolute bottom-0 left-0 p-6 text-white opacity-0 hover:opacity-100 transition-opacity">
-            <p class="text-xs uppercase tracking-widest mb-1">Seguridad</p>
-            <p class="font-serif text-lg">Cristal reforzado 12 mil</p>
-          </div>
-        </div>
+  <!-- Track -->
+  <div
+    id="projectsCarousel"
+    class="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2 px-1 no-scrollbar"
+  >
+    <!-- 1 -->
+    <div class="min-w-[85%] md:min-w-[48%] lg:min-w-[32%] xl:min-w-[24%] image-hover relative aspect-[3/4] fade-up stagger-1 snap-start flex-shrink-0">
+      <img src="image/image1.jpg" alt="Sala residencial" class="w-full h-full object-cover rounded-sm">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity rounded-sm"></div>
+      <div class="absolute bottom-0 left-0 p-6 text-white opacity-0 hover:opacity-100 transition-opacity">
+        <p class="text-xs uppercase tracking-widest mb-1">Residencial</p>
+        <p class="font-serif text-lg">Sala con control solar transparente</p>
       </div>
     </div>
-  </section>
 
+    <!-- 2 -->
+    <div class="min-w-[85%] md:min-w-[48%] lg:min-w-[32%] xl:min-w-[24%] image-hover relative aspect-[3/4] fade-up stagger-2 snap-start flex-shrink-0">
+      <img src="image/image2.jpg" alt="Fachada comercial" class="w-full h-full object-cover rounded-sm">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity rounded-sm"></div>
+      <div class="absolute bottom-0 left-0 p-6 text-white opacity-0 hover:opacity-100 transition-opacity">
+        <p class="text-xs uppercase tracking-widest mb-1">Comercial</p>
+        <p class="font-serif text-lg">Fachada con plata reflecta</p>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="min-w-[85%] md:min-w-[48%] lg:min-w-[32%] xl:min-w-[24%] image-hover relative aspect-[3/4] fade-up stagger-3 snap-start flex-shrink-0">
+      <img src="image/image3.jpg" alt="Oficina PDLC" class="w-full h-full object-cover rounded-sm">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity rounded-sm"></div>
+      <div class="absolute bottom-0 left-0 p-6 text-white opacity-0 hover:opacity-100 transition-opacity">
+        <p class="text-xs uppercase tracking-widest mb-1">Privacidad</p>
+        <p class="font-serif text-lg">Oficina con privacidad PDLC</p>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="min-w-[85%] md:min-w-[48%] lg:min-w-[32%] xl:min-w-[24%] image-hover relative aspect-[3/4] fade-up stagger-4 snap-start flex-shrink-0">
+      <img src="image/image4.jpg" alt="Seguridad" class="w-full h-full object-cover rounded-sm">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity rounded-sm"></div>
+      <div class="absolute bottom-0 left-0 p-6 text-white opacity-0 hover:opacity-100 transition-opacity">
+        <p class="text-xs uppercase tracking-widest mb-1">Claridad</p>
+        <p class="font-serif text-lg">Cristal de alta transparencia</p>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="min-w-[85%] md:min-w-[48%] lg:min-w-[32%] xl:min-w-[24%] image-hover relative aspect-[3/4] fade-up snap-start flex-shrink-0">
+      <img src="image/image5.jpg" alt="Nano cerámico" class="w-full h-full object-cover rounded-sm">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity rounded-sm"></div>
+      <div class="absolute bottom-0 left-0 p-6 text-white opacity-0 hover:opacity-100 transition-opacity">
+        <p class="text-xs uppercase tracking-widest mb-1">Control solar</p>
+        <p class="font-serif text-lg">Nano cerámico 70%</p>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="min-w-[85%] md:min-w-[48%] lg:min-w-[32%] xl:min-w-[24%] image-hover relative aspect-[3/4] fade-up snap-start flex-shrink-0">
+      <img src="image/image6.jpg" alt="Nano carbón" class="w-full h-full object-cover rounded-sm">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity rounded-sm"></div>
+      <div class="absolute bottom-0 left-0 p-6 text-white opacity-0 hover:opacity-100 transition-opacity">
+        <p class="text-xs uppercase tracking-widest mb-1">Control solar</p>
+        <p class="font-serif text-lg">Nano carbón</p>
+      </div>
+    </div>
+  </div>
+</div>
+      
   <!-- Contact Form -->
   <section class="py-24 bg-vitra-sand" id="contacto">
     <div class="max-w-2xl mx-auto px-6">
