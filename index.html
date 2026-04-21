@@ -1116,5 +1116,30 @@
     });
   </script>
 <script src="https://deepsite.hf.co/deepsite-badge.js"></script>
+<!-- Tu contenido arriba -->
+
+<script>
+  const projectsCarousel = document.getElementById('projectsCarousel');
+  const projectsPrev = document.getElementById('projectsPrev');
+  const projectsNext = document.getElementById('projectsNext');
+
+  if (projectsCarousel && projectsPrev && projectsNext) {
+    const scrollAmount = () => {
+      const card = projectsCarousel.querySelector('div.snap-start');
+      return card ? card.offsetWidth + 16 : 320;
+    };
+
+    projectsNext.addEventListener('click', () => {
+      projectsCarousel.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
+    });
+
+    projectsPrev.addEventListener('click', () => {
+      projectsCarousel.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
+    });
+  }
+</script>
+
 </body>
+</html>
+    </body>
 </html>
