@@ -39,7 +39,13 @@
       transform: translateY(30px);
       transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     }
-    
+    .no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
     .fade-up.visible {
       opacity: 1;
       transform: translateY(0);
@@ -1102,9 +1108,10 @@
   const projectsNext = document.getElementById('projectsNext');
 
   if (projectsCarousel && projectsPrev && projectsNext) {
+
     const scrollAmount = () => {
-      const card = projectsCarousel.querySelector('div.snap-start');
-      return card ? card.offsetWidth + 16 : 320;
+      const card = projectsCarousel.querySelector('.snap-start');
+      return card ? card.offsetWidth + 16 : 300;
     };
 
     projectsNext.addEventListener('click', () => {
@@ -1116,8 +1123,5 @@
     });
   }
 </script>
-
-</body>
-</html>
     </body>
 </html>
