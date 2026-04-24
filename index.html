@@ -828,53 +828,67 @@
         <h2 class="font-serif text-3xl mb-2 text-center">Cuéntanos tu proyecto</h2>
         <p class="text-vitra-gray text-center mb-8 text-sm">Registra tus datos y en breve un asesor se comunicará contigo.</p>
         
-        <form id="contactForm" class="space-y-6">
-          <div class="grid md:grid-cols-2 gap-6">
-            <div>
-              <label class="block text-xs font-medium mb-2 uppercase tracking-wider">Nombre</label>
-              <input type="text" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-sm focus:outline-none focus:border-vitra-charcoal transition-colors text-sm" placeholder="Tu nombre">
-            </div>
-            <div>
-              <label class="block text-xs font-medium mb-2 uppercase tracking-wider">Teléfono</label>
-              <input type="tel" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-sm focus:outline-none focus:border-vitra-charcoal transition-colors text-sm" placeholder="33 0000 0000">
-            </div>
-          </div>
+      <form id="contactForm" class="space-y-6">
 
-          <div>
-            <label class="block text-xs font-medium mb-2 uppercase tracking-wider">Ciudad</label>
-            <input type="text" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-sm focus:outline-none focus:border-vitra-charcoal transition-colors text-sm" placeholder="Guadalajara, Jalisco">
-          </div>
+  <div class="grid md:grid-cols-2 gap-6">
+    <div>
+      <label class="block text-xs font-medium mb-2 uppercase tracking-wider">Nombre</label>
+      <input name="nombre" type="text" required
+        class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-sm focus:outline-none focus:border-vitra-charcoal text-sm"
+        placeholder="Tu nombre">
+    </div>
 
-          <div class="grid md:grid-cols-2 gap-6">
-            <div>
-              <label class="block text-xs font-medium mb-2 uppercase tracking-wider">Tipo de proyecto</label>
-              <select class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-sm focus:outline-none focus:border-vitra-charcoal transition-colors text-sm">
-                <option>Residencial</option>
-                <option>Comercial</option>
-                <option>Industria</option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-xs font-medium mb-2 uppercase tracking-wider">Necesidad principal</label>
-              <select class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-sm focus:outline-none focus:border-vitra-charcoal transition-colors text-sm">
-                <option>Control solar</option>
-                <option>Privacidad</option>
-                <option>Seguridad</option>
-                <option>Combinadas</option>
-              </select>
-            </div>
-          </div>
+    <div>
+      <label class="block text-xs font-medium mb-2 uppercase tracking-wider">Teléfono</label>
+      <input name="telefono" type="tel" required
+        class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-sm focus:outline-none focus:border-vitra-charcoal text-sm"
+        placeholder="33 0000 0000">
+    </div>
+  </div>
 
-          <div>
-            <label class="block text-xs font-medium mb-2 uppercase tracking-wider">Mensaje</label>
-            <textarea rows="4" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-sm focus:outline-none focus:border-vitra-charcoal transition-colors text-sm" placeholder="Describe tu espacio: ventanales grandes, orientación, ubicación..."></textarea>
-          </div>
+  <div>
+    <label class="block text-xs font-medium mb-2 uppercase tracking-wider">Ciudad</label>
+    <input name="ciudad" type="text"
+      class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-sm focus:outline-none focus:border-vitra-charcoal text-sm"
+      placeholder="Guadalajara, Jalisco">
+  </div>
 
-          <button type="submit" class="w-full bg-vitra-charcoal text-white py-4 font-medium hover:bg-gray-800 transition-colors rounded-sm flex items-center justify-center gap-2">
-            Solicitar asesoría
-            <i data-lucide="send" class="w-4 h-4"></i>
-          </button>
-        </form>
+  <div class="grid md:grid-cols-2 gap-6">
+    <div>
+      <label class="block text-xs font-medium mb-2 uppercase tracking-wider">Tipo de proyecto</label>
+      <select name="tipo_proyecto"
+        class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-sm focus:outline-none focus:border-vitra-charcoal text-sm">
+        <option>Residencial</option>
+        <option>Comercial</option>
+        <option>Industrial</option>
+      </select>
+    </div>
+
+    <div>
+      <label class="block text-xs font-medium mb-2 uppercase tracking-wider">Necesidad principal</label>
+      <select name="necesidad"
+        class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-sm focus:outline-none focus:border-vitra-charcoal text-sm">
+        <option>Control solar</option>
+        <option>Privacidad</option>
+        <option>Seguridad</option>
+        <option>PDLC (Smart Glass)</option>
+      </select>
+    </div>
+  </div>
+
+  <div>
+    <label class="block text-xs font-medium mb-2 uppercase tracking-wider">Mensaje</label>
+    <textarea name="mensaje" rows="4"
+      class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-sm focus:outline-none focus:border-vitra-charcoal text-sm"
+      placeholder="Describe tu espacio: ventanales, orientación, m2, etc..."></textarea>
+  </div>
+
+  <button type="submit"
+    class="w-full bg-vitra-charcoal text-white py-4 rounded-sm text-sm font-semibold hover:opacity-90 transition">
+    Solicitar asesoría →
+  </button>
+
+</form>
 
         <div class="mt-8 pt-8 border-t border-gray-100 text-center">
           <p class="text-sm text-vitra-gray mb-4">O si lo prefieres, escríbenos por WhatsApp y te ayudamos más rápido.</p>
