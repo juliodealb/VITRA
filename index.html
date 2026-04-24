@@ -1143,5 +1143,23 @@
     });
   }
 </script>
+  <script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const nombre = this.nombre.value;
+  const telefono = this.telefono.value;
+  const ciudad = this.ciudad.value;
+  const tipo = this.tipo_proyecto.value;
+  const necesidad = this.necesidad.value;
+  const mensaje = this.mensaje.value;
+
+  const texto = `Hola, quiero cotizar:\n\nNombre: ${nombre}\nTeléfono: ${telefono}\nCiudad: ${ciudad}\nTipo: ${tipo}\nNecesidad: ${necesidad}\nMensaje: ${mensaje}`;
+
+  const url = `https://wa.me/523323278540?text=${encodeURIComponent(texto)}`;
+
+  window.open(url, "_blank");
+});
+</script>
     </body>
 </html>
